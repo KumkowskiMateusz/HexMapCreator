@@ -39,4 +39,9 @@ public class MainController {
         return ResponseEntity.status(HttpStatus.OK).body("Hello World!");
     }
 
+    @GetMapping(value = "/test")
+    public ResponseEntity testPage(){
+        return ResponseEntity.status(HttpStatus.OK).body("This is a test!");
+    }
+
 }
