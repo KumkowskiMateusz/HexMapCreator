@@ -1,0 +1,48 @@
+@import "./variables";
+
+#selection_holder {
+    width: 100%;
+}
+
+#hexagon {
+    width: 690px;
+	height: 597px; /* width*√3/2 */
+	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	background: $light_shades;
+}
+
+#hexagon_border {
+    position: absolute;
+    left: 5%;
+    width: 700px;
+	height: 606px; /* width*√3/2 */
+	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	background: $dark_shades;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hexagon_border:hover {
+    animation:example 3s ease infinite alternate ;
+    -moz-animation: example 3s ease infinite alternate;
+    -webkit-animation: example 3s ease infinite alternate;
+}
+
+@-moz-keyframes example{
+    100% {
+        -moz-transform: rotateY(360deg) translateX(100%);
+    } 
+}
+
+@-webkit-keyframes example{
+    100% {
+        -webkit-transform: rotateY(360deg) translateX(100%) ;
+    } 
+}
+
+@keyframes example{
+    100% {
+        transform:  translateX(100%) rotate(120deg);
+    }
+}
