@@ -1,48 +1,43 @@
 @import "./variables";
+@import "./roll_animation";
+
+.absolute{
+    position: absolute;
+}
 
 #selection_holder {
     width: 100%;
 }
 
 #hexagon {
-    width: 690px;
-	height: 597px; /* width*√3/2 */
+    width: 69vh;
+	height: calc(69vh * 1.73205080757 / 2); /* width*√3/2 */
 	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	background: $light_shades;
+    box-shadow: inset 0px 0px $dark_grey ;
 }
 
 #hexagon_border {
-    position: absolute;
-    left: 5%;
-    width: 700px;
-	height: 606px; /* width*√3/2 */
+    bottom: 30%;
+    width: 71vh;
+	height: calc(71vh * 1.73205080757 / 2); /* width*√3/2 */
 	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-	background: $dark_shades;
+	background: $main_color;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 }
 
-#hexagon_border:hover {
-    animation:example 3s ease infinite alternate ;
-    -moz-animation: example 3s ease infinite alternate;
-    -webkit-animation: example 3s ease infinite alternate;
+#hexagon_border_glow{
+    top: 20vh;
+    filter: drop-shadow(0px 0px 100px $light_accent_low_opacity);
+    left: 5%;
+    z-index: -1;
 }
 
-@-moz-keyframes example{
-    100% {
-        -moz-transform: rotateY(360deg) translateX(100%);
-    } 
-}
-
-@-webkit-keyframes example{
-    100% {
-        -webkit-transform: rotateY(360deg) translateX(100%) ;
-    } 
-}
-
-@keyframes example{
-    100% {
-        transform:  translateX(100%) rotate(120deg);
-    }
+#hexagon_border_glow:hover{
+    animation:roll_animation 3s ease infinite alternate ;
+    -moz-animation: roll_animation 3s ease infinite alternate;
+    -webkit-animation: roll_animation 3s ease infinite alternate;
 }

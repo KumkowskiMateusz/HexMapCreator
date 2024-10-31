@@ -1,46 +1,67 @@
 @charset "UTF-8";
+@keyframes roll_animation {
+  0% {
+    transform: translateX(0vw) rotate(0deg);
+    filter: drop-shadow(0px 0px 100px rgba(236, 167, 101, 0.5));
+  }
+  50% {
+    transform: translateX(25vw) rotate(60deg);
+    filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.5));
+  }
+  100% {
+    transform: translateX(50vw) rotate(120deg);
+    filter: drop-shadow(0px 0px 100px rgba(172, 126, 160, 0.5));
+  }
+}
+.absolute {
+  position: absolute;
+}
+
 #selection_holder {
   width: 100%;
 }
 
 #hexagon {
-  width: 690px;
-  height: 597px; /* width*√3/2 */
+  width: 69vh;
+  height: 59.7557528612vh; /* width*√3/2 */
   -webkit-clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
           clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background: #EBF2EB;
+  box-shadow: inset 0px 0px #19181a;
 }
 
 #hexagon_border {
-  position: absolute;
-  left: 5%;
-  width: 700px;
-  height: 606px; /* width*√3/2 */
+  bottom: 30%;
+  width: 71vh;
+  height: 61.4878036687vh; /* width*√3/2 */
   -webkit-clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
           clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background: #2a182d;
+  background: #ac7ea0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -1;
 }
 
-#hexagon_border:hover {
-  animation: example 3s ease infinite alternate;
-  -moz-animation: example 3s ease infinite alternate;
-  -webkit-animation: example 3s ease infinite alternate;
+#hexagon_border_glow {
+  top: 20vh;
+  filter: drop-shadow(0px 0px 100px rgba(236, 167, 101, 0.5));
+  left: 5%;
+  z-index: -1;
 }
-@keyframes example {
-  100% {
-    transform: translateX(100%) rotate(120deg);
-  }
+
+#hexagon_border_glow:hover {
+  animation: roll_animation 3s ease infinite alternate;
+  -moz-animation: roll_animation 3s ease infinite alternate;
+  -webkit-animation: roll_animation 3s ease infinite alternate;
 }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: #2a182d;
-  background-color: #ac7ea0;
+  color: #EBF2EB;
+  background-color: #19181a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -50,13 +71,15 @@
 html {
   margin: 0;
   border: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   border: 0;
+  padding: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100vw;
+  z-index: -10;
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,41 @@
+@import "./variables";
+
+@-moz-keyframes roll_animation{
+    0% {
+        -moz-transform:  translateX(0vw) rotate(0deg);
+    }
+    50%{
+        -moz-transform:  translateX(25vw) rotate(60deg);
+    }
+    100% {
+        -moz-transform:  translateX(50vw) rotate(120deg);
+    }
+}
+
+@-webkit-keyframes roll_animation{
+    0% {
+        -webkit-transform:  translateX(0vw) rotate(0deg);
+    }
+    50%{
+        -webkit-transform:  translateX(25vw) rotate(60deg);
+    }
+    100% {
+        -webkit-transform: translateX(50vw) rotate(120deg);
+    }
+}
+
+@keyframes roll_animation{
+    0% {
+        transform:  translateX(0vw) rotate(0deg);
+        filter: drop-shadow(0px 0px 100px $light_accent_low_opacity)
+    }
+    50%{
+        transform:  translateX(25vw) rotate(60deg);
+        filter: drop-shadow(0px 0px 100px $low_opacity_white)
+
+    }
+    100% {
+        transform:  translateX(50vw) rotate(120deg);
+        filter: drop-shadow(0px 0px 100px $main_color_low_opacity)
+    }
+}

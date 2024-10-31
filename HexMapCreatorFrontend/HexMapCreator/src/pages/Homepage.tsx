@@ -1,15 +1,21 @@
+import React from "react"
 
 function Homepage(){
 
+    const [slide,setSlide] = React.useState(0)
+
+    
         return(
         <>
-            <div id="hexagon_border">
-                    <div id="hexagon"></div>
+            <div id="hexagon_border_glow" className="absolute">
+                <div id="hexagon_border">
+                        <div id="hexagon"></div> 
+                </div>
             </div>
+           
             <div id="selection_holder">
-                <div id="form_sliding_bar"></div>
-                <button id="switch_form_button">Switch Form</button>
                 <div id="login_form_holder">
+                    <button id="switch_form_button">Switch Form</button>
                     <form id="login_form">
                         <label htmlFor="login_username">Username</label>
                         <input type="text" id="login_username" name="login_username"></input>
