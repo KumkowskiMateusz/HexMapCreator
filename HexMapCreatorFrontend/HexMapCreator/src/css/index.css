@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @keyframes roll_animation {
   0% {
-    transform: translateX(0vw) rotate(0deg);
+    transform: translate(0vw) rotate(0deg);
     filter: drop-shadow(0px 0px 100px rgba(236, 167, 101, 0.5));
   }
   50% {
-    transform: translateX(25vw) rotate(60deg);
+    transform: translate(25vw) rotate(60deg);
     filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.5));
   }
   100% {
-    transform: translateX(50vw) rotate(120deg);
+    transform: translate(50vw) rotate(120deg);
     filter: drop-shadow(0px 0px 100px rgba(172, 126, 160, 0.5));
   }
 }
@@ -18,7 +18,12 @@
 }
 
 #selection_holder {
-  width: 100%;
+  top: 20vh;
+  display: flex;
+  width: 64vw;
+  justify-content: space-between;
+  padding-left: 17vw;
+  padding-right: 19vw;
 }
 
 #hexagon {
@@ -27,11 +32,9 @@
   -webkit-clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
           clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background: #EBF2EB;
-  box-shadow: inset 0px 0px #19181a;
 }
 
 #hexagon_border {
-  bottom: 30%;
   width: 71vh;
   height: 61.4878036687vh; /* width*√3/2 */
   -webkit-clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
@@ -45,12 +48,9 @@
 
 #hexagon_border_glow {
   top: 20vh;
-  filter: drop-shadow(0px 0px 100px rgba(236, 167, 101, 0.5));
   left: 5%;
   z-index: -1;
-}
-
-#hexagon_border_glow:hover {
+  filter: drop-shadow(0px 0px 100px rgba(236, 167, 101, 0.5));
   animation: roll_animation 3s ease infinite alternate;
   -moz-animation: roll_animation 3s ease infinite alternate;
   -webkit-animation: roll_animation 3s ease infinite alternate;
@@ -81,5 +81,6 @@ body {
   display: flex;
   place-items: center;
   width: 100vw;
+  height: 100vh;
   z-index: -10;
 }/*# sourceMappingURL=index.css.map */

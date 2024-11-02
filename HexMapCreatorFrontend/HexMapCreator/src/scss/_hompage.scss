@@ -5,8 +5,14 @@
     position: absolute;
 }
 
-#selection_holder {
-    width: 100%;
+
+#selection_holder{
+    top:20vh;
+    display: flex;
+    width: calc(100vw - 17vw - 19vw);
+    justify-content: space-between;
+    padding-left: 17vw;
+    padding-right: 19vw;
 }
 
 #hexagon {
@@ -14,15 +20,14 @@
 	height: calc(69vh * 1.73205080757 / 2); /* width*√3/2 */
 	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	background: $light_shades;
-    box-shadow: inset 0px 0px $dark_grey ;
 }
 
 #hexagon_border {
-    bottom: 30%;
     width: 71vh;
 	height: calc(71vh * 1.73205080757 / 2); /* width*√3/2 */
 	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	background: $main_color;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,13 +36,13 @@
 
 #hexagon_border_glow{
     top: 20vh;
-    filter: drop-shadow(0px 0px 100px $light_accent_low_opacity);
     left: 5%;
     z-index: -1;
-}
 
-#hexagon_border_glow:hover{
+    filter: drop-shadow(0px 0px 100px $light_accent_low_opacity);
+
     animation:roll_animation 3s ease infinite alternate ;
     -moz-animation: roll_animation 3s ease infinite alternate;
     -webkit-animation: roll_animation 3s ease infinite alternate;
 }
+
