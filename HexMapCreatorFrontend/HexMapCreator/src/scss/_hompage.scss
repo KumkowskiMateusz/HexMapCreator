@@ -1,48 +1,63 @@
 @import "./variables";
 @import "./roll_animation";
 
+
 .absolute{
     position: absolute;
 }
 
-
-#selection_holder{
-    top:20vh;
-    display: flex;
-    width: calc(100vw - 17vw - 19vw);
-    justify-content: space-between;
-    padding-left: 17vw;
-    padding-right: 19vw;
+.bg_transparent{
+    background: transparent;
 }
 
+.bg_lightshade{
+    background: $light_shades;
+}
+
+.z0{
+    z-index: 0;
+}
+
+#selection_holder{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 #hexagon {
-    width: 69vh;
-	height: calc(69vh * 1.73205080757 / 2); /* width*√3/2 */
+    width: min(69vh,69vw);
+	height: min(calc(69vh * 1.73205080757 / 2),calc(69vw * 1.73205080757 / 2)); /* width*√3/2 */
 	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-	background: $light_shades;
 }
 
 #hexagon_border {
-    width: 71vh;
-	height: calc(71vh * 1.73205080757 / 2); /* width*√3/2 */
-	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	width: min(70vh,70vw);
+	height: min(calc(70vh * 1.73205080757 / 2),calc(70vw * 1.73205080757 / 2)); /* width*√3/2 */
+    clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 	background: $main_color;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#hexagon_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     z-index: -1;
 }
 
-#hexagon_border_glow{
-    top: 20vh;
-    left: 5%;
-    z-index: -1;
-
-    filter: drop-shadow(0px 0px 100px $light_accent_low_opacity);
-
-    animation:roll_animation 3s ease infinite alternate ;
-    -moz-animation: roll_animation 3s ease infinite alternate;
-    -webkit-animation: roll_animation 3s ease infinite alternate;
+#mid_hexagon{
+    animation:roll_animation 4s ease infinite;
+    -moz-animation: roll_animation 4s ease infinite;
+    -webkit-animation: roll_animation 4s ease infinite;
 }
+
+
+
 

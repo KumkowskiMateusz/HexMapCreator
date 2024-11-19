@@ -11,7 +11,7 @@
     line-height: 1.5;
     font-weight: 400;
   
-    color: $light_shades;
+    color: $dark_grey;
     background-color: $dark_grey;
   
     font-synthesis: none;
@@ -31,12 +31,6 @@ body {
   margin: 0;
   border: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10;
-  
 }
   
  
